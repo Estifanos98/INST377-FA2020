@@ -66,6 +66,7 @@
             fetch('/api')
             .then((response) => response.text())
             .then((response) => {
+
                 console.log(response);
                 document.querySelector("body").style.backgroundColor = "#FF5733";
                 const fruits = ['Avocado','Papaw','Jackfruit'];
@@ -74,6 +75,7 @@
                 checks.forEach(((check, i) => {
                     console.log(check,i);
                     check.innerText = fruits[i];
+                    
                 }))
                 document.querySelector("h1").innerText = response;
                 document.querySelector(".flex-outer").style.margin = "0 auto";
