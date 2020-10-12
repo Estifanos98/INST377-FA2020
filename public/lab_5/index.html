@@ -57,10 +57,29 @@
           </li>
           <li>
             <button name = "button" id = "button" type="submit">Submit</button>
-            <button name = "button" id = "button" type="submit">Activate</button>
+            <button type="button" class="button" id="act_button" name="act_button" onclick="testFunction()">Activate</button>
           </li>
         </ul>
       </form>
+      <script>
+        function testFunction() {
+            fetch('/api')
+            .then((response) => response.text())
+            .then((response) => {
+                console.log(response);
+                document.querySelector("body").style.backgroundColor = "#FF5733";
+                const fruits = ['avocado','papaw','apple'];
+                const checks = document.querySelectorAll('.flex-inner label')
+                console.log(checks.length, checks[0]);
+                checks.forEach(((check, i) => {
+                    console.log(check,i);
+                    check.innerText = fruits[i];
+                }))
+                document.querySelector("h1").innerText = response;
+                document.querySelector(".flex-outer").style.margin = "0 auto";
+            }); 
+        }
+   </script>
   </body>
 </html>
 
