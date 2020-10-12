@@ -57,12 +57,12 @@
           </li>
           <li>
             <button name = "button" id = "button" type="submit">Submit</button>
-            <button type="button" class="button" id="act_button" name="act_button" onclick="testFunction()">Activate</button>
+            <button type="button" class="button" id="act_button" name="act_button" onclick="changeFunc()">Activate</button>
           </li>
         </ul>
       </form>
       <script>
-        function testFunction() {
+        function changeFunc() {
             fetch('/api')
             .then((response) => response.text())
             .then((response) => {
