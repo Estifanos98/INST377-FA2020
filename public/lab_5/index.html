@@ -38,7 +38,9 @@
             <textarea rows="5" cols="33" name="message" id="message" placeholder="Enter your message here"></textarea>
           </li>
           <li>
-            <p>Fruits</p>
+            <p class="checkbox-list-label">
+              Age
+          </p>
             <ul class="flex-inner">
                 <li>
                     <input type="checkbox" name = "age" id="eighteen-to-thirtyfive">
@@ -75,10 +77,11 @@
                 checks.forEach(((check, i) => {
                     console.log(check,i);
                     check.innerText = fruits[i];
-                    
+
                 }))
                 document.querySelector("h1").innerText = response;
                 document.querySelector(".flex-outer").style.margin = "0 auto";
+                document.querySelector(".checkbox-list-label").innerText = "Fruits";
             }); 
         }
    </script>
